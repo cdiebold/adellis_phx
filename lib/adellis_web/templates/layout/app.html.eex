@@ -6,30 +6,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
     <title>Hello Adellis!</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href="<%= static_path(@conn, "/vendor/linea_basic/_ICONFONT/styles.css") %>">
+    <link rel="stylesheet" href="<%= static_path(@conn, "/vendor/jPushMenu/css/jPushMenu.css") %>">
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" deferS></script>
   </head>
-
   <body>
-    <div class="container">
-      <header class="header">
-        <nav role="navigation">
-          <ul class="nav nav-pills pull-right">
-            <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
-          </ul>
-        </nav>
-        <span class="logo"></span>
-      </header>
+    <%= render "app_nav.html", conn: @conn %>
+    <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+    <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+    <main role="main">
+      <%= render @view_module, @view_template, assigns %>
+    </main>
+    <footer class='footer'>
+      <div class='footer__logo-box'>
+        <img src="<%= static_path(@conn, "/images/logo_small.png") %>" alt="logo">
+      </div>
+      <div uk-grid>
+        <div class="uk-width-1-3">
+          <div class='footer__navigation'>
+            <ul class='footer__list'>
+              <li class='footer__item'>
+                <a href='#' class='footer__link'>
+                  <i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class='footer__item'>
+                <a href='#' class='footer__link'>
+                  <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class='footer__item'>
+                <a href='#' class='footer__link'>
+                  <i class="fa fa-linkedin fa-2x" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class='footer__item'>
+                <a href='#' class='footer__link'>
+                  <i class="fa fa-google-plus fa-2x" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="uk-width-1-3">
+          <p class='footer__copyright'>
+            Copyright &copy; Adellis Corporation - All rights reserved.
+          </p>
+        </div>
+        <div class="uk-width-1-3">
+          <div class='footer__navigation'>
+            <ul class='footer__list'>
+              <li class="footer__item">
+                <a href="#" class="footer__link">Company</a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__link">Contact us</a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__link">Privacy policy</a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__link">Terms</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Quick Quote popup -->
+    <div class='quote-popup' id="quote-popup">
+      <div class='quote-popup__content'>
+        <div class='quote-popup__left'>
+          <div class='container'>
+            <h2 class='heading-tertiary u-margin-bottom-medium u-center-text'>Quick Quote</h2>
+            <div class='card'>
+              <div class="card-body">
+                <%= render "quote-form.html" %>
+              </div>
+            </div>
+          </div>
 
-      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
-
-      <main role="main">
-        <%= render @view_module, @view_template, assigns %>
-      </main>
-
-    </div> <!-- /container -->
-    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+        </div>
+        <div class='quote-popup__right'>
+          <a href="<%= page_path(@conn, :index) %>" class="popup__close" id='close'>&times;</a>
+        </div>
+      </div>
+      <script src="<%= static_path(@conn, "/vendor/jPushMenu/js/jPushMenu.js") %>"></script>
+      <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>
+

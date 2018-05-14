@@ -1,0 +1,26 @@
+<nav class="uk-navbar-container uk-margin" uk-navbar>
+      <div class="uk-navbar-left">
+        <a class="uk-navbar-item uk-logo" href="<%= page_path(@conn, :index) %>">
+        <img src="<%= static_path(@conn, "/images/logo_small.png") %>">
+        </a>
+      </div>
+      <div class='uk-navbar-center'>
+        <a class='uk-navbar-item' href="#quote-popup">
+        <button class="uk-button uk-button-primary">Quick Quote</button>
+        </a>
+      </div>
+      <div class='uk-navbar-right'>
+        <ul class="uk-navbar-nav">
+          <li>
+            <a href="<%= page_path(@conn, :about) %>">
+            About
+            </a>
+          </li>
+          <li>
+            <a href="<%= page_path(@conn, :contact) %>">
+            Contact
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
