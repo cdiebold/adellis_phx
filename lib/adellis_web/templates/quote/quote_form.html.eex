@@ -1,0 +1,39 @@
+<%= form_for @changeset, quote_path(@conn, :create), [as: :quote, id: "quote-form"], fn f -> %>
+
+  <%= if @changeset.action do %>
+    <div id='form-error' class="uk-alert uk-alert-danger">
+      <a class="uk-alert-close" uk-close></a>
+      <p>Something went wrong. Please check the form errors below.</p>
+    </div>
+  <% end %>
+
+  <div class='uk-grid-small' uk-grid>
+    <div class='uk-width-1-2'>
+      <%= label f , :first_name, class: "uk-form-label" %>
+      <%= text_input f, :first_name, class: "uk-input" %>
+      <%= error_tag f, :first_name %>
+    </div>
+    <div class='uk-width-1-2'>
+      <%= label f , :last_name, class: "uk-form-label" %>
+      <%= text_input f, :last_name, class: "uk-input" %>
+      <%= error_tag f, :last_name %>
+    </div>
+    <div class='uk-width-1-2'>
+      <%= label f , :email_address, class: "uk-form-label" %>
+      <%= text_input f, :email_address, class: "uk-input" %>
+      <%= error_tag f, :email_address %>
+    </div>
+    <div class='uk-width-1-2'>
+      <%= label f , :phone_number, class: "uk-form-label" %>
+      <%= text_input f, :phone_number, class: "uk-input" %>
+      <%= error_tag f, :phone_number %>
+    </div>
+    <div class='uk-width-1-1'>
+      <%= label f , :company_name, class: "uk-form-label" %>
+      <%= text_input f, :company_name, class: "uk-input" %>
+      <%= error_tag f, :company_name %>
+    </div>
+  </div>
+
+  <%= submit "Quote", class: "uk-button uk-button-primary" %>
+<% end %>

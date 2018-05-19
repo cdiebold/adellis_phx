@@ -17,87 +17,98 @@
   </head>
   <body>
     <%= render "app_nav.html", conn: @conn %>
-    <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-    <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
-    <main role="main">
-      <%= render @view_module, @view_template, assigns %>
-    </main>
-    <footer class='footer'>
-      <div class='footer__logo-box'>
-        <img src="<%= static_path(@conn, "/images/logo_small.png") %>" alt="logo">
+    <%= if get_flash(@conn, :info) do %>
+
+      <div class='uk-alert-primary' uk-alert>
+        <a class='uk-alert-close' uk-close></a>
+        <p><%= get_flash(@conn, :info) %></p>
       </div>
-      <div uk-grid>
-        <div class="uk-width-1-3">
-          <div class='footer__navigation'>
-            <ul class='footer__list'>
-              <li class='footer__item'>
-                <a href='#' class='footer__link'>
-                  <i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i>
-                </a>
-              </li>
-              <li class='footer__item'>
-                <a href='#' class='footer__link'>
-                  <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
-                </a>
-              </li>
-              <li class='footer__item'>
-                <a href='#' class='footer__link'>
-                  <i class="fa fa-linkedin fa-2x" aria-hidden="true"></i>
-                </a>
-              </li>
-              <li class='footer__item'>
-                <a href='#' class='footer__link'>
-                  <i class="fa fa-google-plus fa-2x" aria-hidden="true"></i>
-                </a>
-              </li>
-            </ul>
+      <%= end %>
+      <%= if get_flash(@conn, :error) do %>
+        <div class='uk-alert-danger' uk-alert>
+          <a class='uk-alert-close' uk-close></a>
+          <p><%= get_flash(@conn, :error) %></p>
+        </div>
+        <%= end %>
+        <main role="main">
+          <%= render @view_module, @view_template, assigns %>
+        </main>
+        <footer class='footer'>
+          <div class='footer__logo-box'>
+            <img src="<%= static_path(@conn, "/images/logo_small.png") %>" alt="logo">
           </div>
-        </div>
-        <div class="uk-width-1-3">
-          <p class='footer__copyright'>
-            Copyright &copy; Adellis Corporation - All rights reserved.
-          </p>
-        </div>
-        <div class="uk-width-1-3">
-          <div class='footer__navigation'>
-            <ul class='footer__list'>
-              <li class="footer__item">
-                <a href="#" class="footer__link">Company</a>
-              </li>
-              <li class="footer__item">
-                <a href="#" class="footer__link">Contact us</a>
-              </li>
-              <li class="footer__item">
-                <a href="#" class="footer__link">Privacy policy</a>
-              </li>
-              <li class="footer__item">
-                <a href="#" class="footer__link">Terms</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <!-- Quick Quote popup -->
-    <div class='quote-popup' id="quote-popup">
-      <div class='quote-popup__content'>
-        <div class='quote-popup__left'>
-          <div class='container'>
-            <h2 class='heading-tertiary u-margin-bottom-medium u-center-text'>Quick Quote</h2>
-            <div class='card'>
-              <div class="card-body">
-                <%= render "quote-form.html" %>
+          <div uk-grid>
+            <div class="uk-width-1-3">
+              <div class='footer__navigation'>
+                <ul class='footer__list'>
+                  <li class='footer__item'>
+                    <a href='#' class='footer__link'>
+                      <i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i>
+                    </a>
+                  </li>
+                  <li class='footer__item'>
+                    <a href='#' class='footer__link'>
+                      <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+                    </a>
+                  </li>
+                  <li class='footer__item'>
+                    <a href='#' class='footer__link'>
+                      <i class="fa fa-linkedin fa-2x" aria-hidden="true"></i>
+                    </a>
+                  </li>
+                  <li class='footer__item'>
+                    <a href='#' class='footer__link'>
+                      <i class="fa fa-google-plus fa-2x" aria-hidden="true"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="uk-width-1-3">
+              <p class='footer__copyright'>
+                Copyright &copy; Adellis Corporation - All rights reserved.
+              </p>
+            </div>
+            <div class="uk-width-1-3">
+              <div class='footer__navigation'>
+                <ul class='footer__list'>
+                  <li class="footer__item">
+                    <a href="#" class="footer__link">Company</a>
+                  </li>
+                  <li class="footer__item">
+                    <a href="#" class="footer__link">Contact us</a>
+                  </li>
+                  <li class="footer__item">
+                    <a href="#" class="footer__link">Privacy policy</a>
+                  </li>
+                  <li class="footer__item">
+                    <a href="#" class="footer__link">Terms</a>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
+        </footer>
+        <!-- Quick Quote popup -->
+        <div class='quote-popup' id="quote-popup">
+          <div class='quote-popup__content'>
+            <div class='quote-popup__left'>
+              <div class='container'>
+                <h2 class='heading-tertiary u-margin-bottom-medium u-center-text'>Quick Quote</h2>
+                <div class='card'>
+                  <div class="card-body">
+                    <%= render "quote-form.html" %>
+                  </div>
+                </div>
+              </div>
 
-        </div>
-        <div class='quote-popup__right'>
-          <a href="<%= page_path(@conn, :index) %>" class="popup__close" id='close'>&times;</a>
-        </div>
-      </div>
-      <script src="<%= static_path(@conn, "/vendor/jPushMenu/js/jPushMenu.js") %>"></script>
-      <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+            </div>
+            <div class='quote-popup__right'>
+              <a href="<%= page_path(@conn, :index) %>" class="popup__close" id='close'>&times;</a>
+            </div>
+          </div>
+          <script src="<%= static_path(@conn, "/vendor/jPushMenu/js/jPushMenu.js") %>"></script>
+          <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>
 

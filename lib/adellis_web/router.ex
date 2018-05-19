@@ -20,6 +20,10 @@ defmodule AdellisWeb.Router do
     get("/", PageController, :index)
     get("/about", PageController, :about)
     get("/contact", PageController, :contact)
+
+    get("/products", ProductController, :index)
+
+    post("/quote", QuoteController, :create)
   end
 
   # Other scopes may use custom stacks.

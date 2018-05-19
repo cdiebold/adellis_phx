@@ -1,0 +1,12 @@
+<h1>Product index</h1>
+
+<div class='uk-container'>
+    <div uk-grid>
+        <div class='uk-width-1-2'>
+            <%= render AdellisWeb.QuoteView, "quote_form.html", conn: @conn, changeset: @changeset  %>
+        </div>
+        <div class='uk-width-1-2'> </div>
+        <div id='app'>
+        </div>
+    </div>
+</div>
