@@ -50,8 +50,12 @@ exports.config = {
     },
     sass: {
       options: {
-        includePaths: ["node_modules/uikit/src/scss"]
+        includePaths: ["node_modules/bootstrap/scss", "node_modules/uikit/src/scss"]
       }
+    },
+    vue: {
+      extractCss: true,
+      out: 'priv/static/css/components.css'
     }
   },
 
@@ -64,6 +68,7 @@ exports.config = {
   npm: {
     enabled: true,
     globals: {
+      Vue: 'vue/dist/vue.common.js',
       $: "jquery",
       jQuery: 'jquery',
       uikit: "uikit",

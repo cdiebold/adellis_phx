@@ -9,20 +9,29 @@ defmodule AdellisWeb.Acceptance.QuoteTest do
 
     form = find_element(:id, "quote-form")
 
-    find_within_element(form, :first_name, "quote[first_name]")
+    find_within_element(form, :name, "quote[first_name]")
     |> fill_field("John")
 
-    find_within_element(form, :last_name, "quote[last_name]")
+    find_within_element(form, :name, "quote[last_name]")
     |> fill_field("Smith")
 
+    find_within_element(form, :name, "quote[email_address]")
+    |> fill_field("jsmith@example.com")
+
+    find_within_element(form, :name, "quote[phone_number]")
+    |> fill_field("321-555-5555")
+
+    find_within_element(form, :name, "quote[company_name]")
+    |> fill_field("Ideal Logistics LLC")
+
     # click on submit button
-    find_within_element(form, :tag, "button")
-    |> click
+    find_within_element(form, :class, "uk-button")
+    |> click()
 
     assert current_path() == "/"
 
     message =
-      find_element(:class, "uk-alert")
+      find_element(:class, "uk-alert-primary")
       |> visible_text()
 
     assert message == "Quote submitted successfully"
@@ -33,14 +42,15 @@ defmodule AdellisWeb.Acceptance.QuoteTest do
 
     form = find_element(:id, "quote-form")
     # submit an empty form
-    find_within_element(form, :tag, "button")
+    find_within_element(form, :class, "uk-button")
+    |> click()
 
-    assert current_path() == "/products"
+    # assert current_path() == "/products"
 
     message =
-      find_element(:class, "uk-alert")
+      find_element(:class, "uk-alert-danger")
       |> visible_text()
 
-    assert message == "Check the form for errors"
+    assert message == "Please check the form for errors"
   end
 end

@@ -26,6 +26,14 @@ defmodule AdellisWeb.Router do
     post("/quote", QuoteController, :create)
   end
 
+  scope "/api", AdellisWeb, as: :api do
+    pipe_through(:api)
+
+    scope "/v1", V1, as: :v1 do
+      resources("/products", ProductController, only: [:index, :show])
+    end
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", AdellisWeb do
   #   pipe_through :api

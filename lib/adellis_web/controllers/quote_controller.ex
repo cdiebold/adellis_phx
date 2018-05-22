@@ -5,20 +5,14 @@ defmodule AdellisWeb.QuoteController do
   def create(conn, %{"quote" => quote_params}) do
     case Sales.create_quote(quote_params) do
       {:ok, _quote} ->
-        IO.puts("In OK state")
-
         conn
         |> put_flash(:info, "Quote submitted successfully")
         |> redirect(to: page_path(conn, :index))
 
       {:error, changeset} ->
-        IO.puts("IN error state")
-
         conn
         |> put_view(AdellisWeb.ProductView)
         |> render(:index, changeset: changeset)
     end
-
-    IO.puts("Got to correct controller")
   end
 end

@@ -1,27 +1,26 @@
-<nav class="uk-navbar-container uk-margin" uk-navbar>
-      <div class="uk-navbar-left">
-        <a class="uk-navbar-item uk-logo" href="<%= page_path(@conn, :index) %>">
-        <img src="<%= static_path(@conn, "/images/logo_small.png") %>">
-        </a>
-      </div>
-      <div class='uk-navbar-center'>
-        <a class='uk-navbar-item' href="#quote-popup">
-        <button class="uk-button uk-button-primary">Quick Quote</button>
-        </a>
-      </div>
-      <div class='uk-navbar-right'>
-        <ul class="uk-navbar-nav">
-            <li><%= link "Products", to: product_path(@conn, :index) %></li>
-          <li>
-            <a href="<%= page_path(@conn, :about) %>">
-            About
-            </a>
-          </li>
-          <li>
-            <a href="<%= page_path(@conn, :contact) %>">
-            Contact
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+<nav class="navbar navbar-expand-lg bg-dark">
+  <a class='navbar-brand' href="<%= page_path(@conn, :index) %>">
+    <img src="<%= static_path(@conn, "/images/logo_small.png") %>">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div id="navbarNavDropdown" class="navbar-collapse collapse justify-content-between">
+    <ul class="navbar-nav mx-auto">
+      <li class='nav-item'>
+        <button class="btn btn-outline-primary" type="button">Quick Quote</button>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto order-0">
+      <li class='nav-item'>
+        <a class='nav-link' href="<%= product_path(@conn, :index) %>">Products</a>
+      </li>
+      <li class='nav-item'>
+        <a class='nav-link' href="<%= page_path(@conn, :about) %>">About</a>
+      </li>
+      <li class='nav-item'>
+        <a class='nav-link' href="<%= page_path(@conn, :contact) %>">Contact</a>
+      </li>
+    </ul>
+  </div>
+</nav>

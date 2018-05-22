@@ -4,7 +4,7 @@
       <span class="heading-primary--main">NSN Parts</span>
       <span class="heading-primary--sub">should not be hard to find</span>
     </h1>
-    <a href="#" class="custom-btn custom-btn--white custom-btn--animated">Browse Parts</a>
+    <a href="<%= product_path(@conn, :index) %>" class="custom-btn custom-btn--white custom-btn--animated">Browse Parts</a>
   </div>
 </section>
 <main>
@@ -12,8 +12,8 @@
     <div class='u-center-text u-margin-bottom-8'>
       <h2 class='heading-secondary'>Our Story</h2>
     </div>
-    <div class="uk-grid">
-      <div class='uk-width-1-2'>
+    <div class="row">
+      <div class='col-6'>
         <h3 class='heading-tertiary u-margin-bottom-2'>Our Founding</h3>
         <p class='paragraph'>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi quo recusandae voluptatibus animi perferendis, tempora
@@ -26,7 +26,7 @@
         </p>
         <a href="<%= page_path(@conn, :about) %>" class='custom-btn-text'>Learn More &rarr;</a>
       </div>
-      <div class='uk-width-1-2'>
+      <div class='col-6'>
         <div class='composition'>
           <img src="<%= static_path(@conn, "/images/tile.jpg") %>" alt="Photo 1" class='composition__photo composition__photo--p1'>
           <img src="<%= static_path(@conn, "/images/tile.jpg") %>" alt="Photo 2" class='composition__photo composition__photo--p2'>
@@ -37,8 +37,8 @@
   </section>
   <section class='section-features'>
     <!-- <h2> Why Choose Us?</h2> -->
-    <div class='uk-grid'>
-      <div class='uk-width-1-4'>
+    <div class='row'>
+      <div class='col-3'>
         <div class='feature-box'>
           <i class='feature-box__icon icon-basic-world'></i>
           <h3 class='tertiary-heading u-margin-bottom-2'>Shipping to all 50 States</h3>
@@ -48,7 +48,7 @@
           </p>
         </div>
       </div>
-      <div class='uk-width-1-4'>
+      <div class='col-3'>
         <div class='feature-box'>
           <i class='feature-box__icon basic-accelerator'></i>
           <h3 class='tertiary-heading u-margin-bottom-2'>Fast Shipping</h3>
@@ -58,7 +58,7 @@
           </p>
         </div>
       </div>
-      <div class='uk-width-1-4'>
+      <div class='col-3'>
         <div class='feature-box'>
           <i class='feature-box__icon basic-clockwise'></i>
           <h3 class='tertiary-heading u-margin-bottom-2'>Quick Quote Turnover</h3>
@@ -68,7 +68,7 @@
           </p>
         </div>
       </div>
-      <div class='uk-width-1-4'>
+      <div class='col-3'>
         <div class='feature-box'>
           <i class='feature-box__icon icon-basic-heart'></i>
           <h3 class='tertiary-heading u-margin-bottom-2'>Customer Satisfaction</h3>

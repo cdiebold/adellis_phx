@@ -22,7 +22,7 @@ defmodule Adellis.SalesTest do
       "company_name" => "Adellis Corporation"
     }
 
-    assert {:ok, quote} = Sales.create_quote(valid_attrs)
+    assert {:ok, _quote} = Sales.create_quote(valid_attrs)
   end
 
   test "create_quote/1 returns a changeset for invalid data" do

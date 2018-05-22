@@ -18,3 +18,10 @@ Ready to run in production? Please [check our deployment guides](http://www.phoe
   * Docs: https://hexdocs.pm/phoenix
   * Mailing list: http://groups.google.com/group/phoenix-talk
   * Source: https://github.com/phoenixframework/phoenix
+
+
+## Hex tasks
+mix hex.info -- tells your your version of hex, elixir and otp 
+mix hex.info <package name> -- tells you information about the package
+mix hex.docs online <package> -- load up documentation online 
+mix hex.docs fetch -- download all documentation for your project

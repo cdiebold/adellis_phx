@@ -1,12 +1,43 @@
 <h1>Product index</h1>
 
-<div class='uk-container'>
-    <div uk-grid>
-        <div class='uk-width-1-2'>
-            <%= render AdellisWeb.QuoteView, "quote_form.html", conn: @conn, changeset: @changeset  %>
-        </div>
-        <div class='uk-width-1-2'> </div>
-        <div id='app'>
-        </div>
+<div class='container-fluid'>
+  <div class='row'>
+    <div class='col-6'>
+      <%= render AdellisWeb.QuoteView, "quote_form.html", conn: @conn, changeset: @changeset  %>
     </div>
+    <div class='col-6'> </div>
+  </div>
+  <div id='product-app'>
+    <div class='row'>
+      <div class='col-10'></div>
+      <div class='col-2'>
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-secondary" v-for="paginationButton in paginate_by">{{paginationButton.value}}</button>
+        </div>
+      </div>
+    </div>
+    <br/>
+    <div class='row'>
+      <div class='col'>
+        <table class='table'>
+          <thead>
+            <tr>
+              <th scope='col'>Nsn</th>
+              <th scope='col'>Name</th>
+              <th scope='col'>Part Number</th>
+              <th scope='col'></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="product in products">
+              <td>{{product.nsn}}</td>
+              <td>{{ product.name }}</td>
+              <td>{{ product.nsn_formatted }}</td>
+              <td><button class='btn bth-primary'>Info</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>
