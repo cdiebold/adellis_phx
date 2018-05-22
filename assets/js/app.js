@@ -19,6 +19,7 @@ new Vue({
     el: "#product-app",
     data: {
         products: [],
+        search: '',
         paginate_by: [
             {
                 value: 1,
@@ -36,15 +37,6 @@ new Vue({
         url: "http://localhost:4000/api/v1/products"
     },
     created() {
-        var self = this;
-        let productDataRoute = "api/v1/products";
-        // try {
-        //     const response = await axios.get(this.url)
-        //     console.log(response);
-        //     this.products = response.data;
-        // } catch (e) {
-        //     this.errors.push(e);
-        // }
         axios.get(this.url).then(response => {
             console.log(response);
             this.products = response.data.data;
@@ -52,5 +44,14 @@ new Vue({
             console.log(error);
         })
     },
-    methods: {}
+    //methods: {},
+    computed: {
+        filteredProducts: function() {
+            return this.products.filter(product => {
+                return product.name.toLowerCase().match(this.search) ||
+                    product.nsn.toString().match(this.search) || 
+                    product.nsn_formatted.match(this.search);
+            });
+        }
+    }
 });

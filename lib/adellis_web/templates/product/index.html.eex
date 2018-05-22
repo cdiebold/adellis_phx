@@ -9,9 +9,12 @@
   </div>
   <div id='product-app'>
     <div class='row'>
-      <div class='col-10'></div>
-      <div class='col-2'>
-        <div class="btn-group" role="group" aria-label="Basic example">
+      <div class='col'></div>
+      <div class='col-6'>
+        <input type='text' v-model='search' class='form-control' placeholder='search products'>
+      </div>
+      <div class='col-4'>
+        <div class="btn-group justify-content-end " role="group" aria-label="Basic example">
           <button type="button" class="btn btn-secondary" v-for="paginationButton in paginate_by">{{paginationButton.value}}</button>
         </div>
       </div>
@@ -29,11 +32,11 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="product in products">
+            <tr v-for="product in filteredProducts">
               <td>{{product.nsn}}</td>
               <td>{{ product.name }}</td>
               <td>{{ product.nsn_formatted }}</td>
-              <td><button class='btn bth-primary'>Info</button></td>
+              <td><button class='btn btn-info' >Info</button></td>
             </tr>
           </tbody>
         </table>

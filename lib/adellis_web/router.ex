@@ -22,6 +22,7 @@ defmodule AdellisWeb.Router do
     get("/contact", PageController, :contact)
 
     get("/products", ProductController, :index)
+    get("/products/:nsn", ProductController, :show)
 
     post("/quote", QuoteController, :create)
   end
