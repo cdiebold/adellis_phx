@@ -10,6 +10,8 @@ config :hound, driver: "phantomjs"
 # Print only warnings and errors during test
 config :logger, level: :warn
 
+config :adellis, Adellis.Mailer, adapter: Bamboo.TestAdapter
+
 # Configure your database
 config :adellis, Adellis.Repo,
   adapter: Ecto.Adapters.Postgres,

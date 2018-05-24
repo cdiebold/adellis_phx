@@ -42,5 +42,10 @@
         </table>
       </div>
     </div>
+    <div class='row'>
+      <div class='col'>
+       <v-client-table :data="products" :columns="columns" :options="options"></v-client-table
+      </div>
+    </div>
   </div>
 </div>

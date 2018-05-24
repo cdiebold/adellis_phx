@@ -6,8 +6,9 @@
 use Mix.Config
 
 # General application configuration
-config :adellis,
-  ecto_repos: [Adellis.Repo]
+config :adellis, ecto_repos: [Adellis.Repo]
+
+config :adellis, Adellis.Mailer, adapter: Bamboo.TestAdapter
 
 # Configures the endpoint
 config :adellis, AdellisWeb.Endpoint,

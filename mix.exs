@@ -20,7 +20,7 @@ defmodule Adellis.Mixfile do
   def application do
     [
       mod: {Adellis.Application, []},
-      extra_applications: [:ex_debug_toolbar, :logger, :runtime_tools]
+      extra_applications: [:ex_debug_toolbar, :bamboo, :logger, :runtime_tools]
     ]
   end
 
@@ -43,7 +43,10 @@ defmodule Adellis.Mixfile do
       {:cowboy, "~> 1.0"},
       {:credo, "~> 0.9.1", only: [:dev, :test], runtime: false},
       {:hound, "~> 1.0"},
-      {:ex_debug_toolbar, "~> 0.5.0"}
+      {:ex_debug_toolbar, "~> 0.5.0"},
+      {:bamboo, "~> 0.8"},
+      {:scrivener_ecto, "~> 1.3"},
+      {:scrivener_html, "~> 1.7"}
     ]
   end
 
