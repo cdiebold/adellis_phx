@@ -7,7 +7,30 @@ defmodule Adellis.Catalog do
     Product |> Repo.all()
   end
 
-  def get_product(nsn) do
-    #  Repo.one(from: p in "products", where: p.nsn = nsn)
+  def paginate(params) do
+    page =
+      Product
+      |> Repo.paginate(params)
+  end
+
+  def search_products(params) do
+    IO.inspect(params)
+    search_term = get_in(params, ["query"])
+    IO.puts(search_term)
+
+    Product
+    |> search(search_term)
+    |> Repo.all()
+  end
+
+  defp search(query, search_term) do
+    wildcard_search = "%#{search_term}%"
+
+    from(
+      product in query,
+      where: ilike(product.name, ^wildcard_search),
+      or_where: ilike(product.nsn, ^wildcard_search),
+      or_where: ilike(product.nsn_formatted, ^wildcard_search)
+    )
   end
 end

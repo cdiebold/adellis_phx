@@ -37,7 +37,7 @@ exports.config = {
   // Phoenix paths configuration
   paths: {
     // Dependencies and current project directories to watch
-    watched: ["static", "css", "js", "vendor"],
+    watched: ["static", "css", "js", "vendor", "elm"],
     // Where to compile files to
     public: "../priv/static"
   },
@@ -56,6 +56,11 @@ exports.config = {
     vue: {
       extractCss: true,
       out: 'priv/static/css/components.css'
+    },
+    elmBrunch: {
+      mainModules: ["elm/src/Main.elm"],
+      makeParameters: ["--debug"],
+      outputFolder:"js/"
     }
   },
 

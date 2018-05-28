@@ -3,7 +3,7 @@ defmodule Adellis.Repo.Migrations.CreateProducts do
 
   def change do
     create table(:products) do
-      add(:nsn, :bigint)
+      add(:nsn, :string)
       add(:nsn_formatted, :string)
       add(:name, :string)
       add(:item_name_code, :integer)

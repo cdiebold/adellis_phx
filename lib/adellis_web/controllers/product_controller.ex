@@ -9,9 +9,8 @@ defmodule AdellisWeb.ProductController do
     render(conn, "index.html", changeset: changeset)
   end
 
-  def show(conn, %{"nsn" => params}) do
-    query = Catalog.get_product(params)
-    render(conn, "show.html", product: query)
-  end
-
+  # def show(conn, %{"nsn" => params}) do
+  #   query = Catalog.get_product(params)
+  #   render(conn, "show.html", product: query)
+  # end
 end

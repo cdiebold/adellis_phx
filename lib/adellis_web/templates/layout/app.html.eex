@@ -9,7 +9,6 @@
     <title><%= title() %></title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel='stylesheet' href="<%= static_path(@conn, "/vendor/linea_basic/_ICONFONT/styles.css") %>">
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
     <!-- development version, includes helpful console warnings -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -110,7 +109,6 @@
         </div>
       </div>
     </div>
-      <script src="<%= static_path(@conn, "/vendor/jPushMenu/js/jPushMenu.js") %>"></script>
       <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>
