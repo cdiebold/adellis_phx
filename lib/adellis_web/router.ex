@@ -31,7 +31,9 @@ defmodule AdellisWeb.Router do
     pipe_through(:api)
 
     scope "/v1", V1, as: :v1 do
-      resources("/products", ProductController, only: [:index, :show])
+      post("/products", ProductController, :search)
+      get("/products", ProductController, :index)
+      get("/products/:part_number", ProductController, :show)
     end
   end
 

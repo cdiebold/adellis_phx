@@ -5,18 +5,16 @@
     <div class='col-6'>
       <%= render AdellisWeb.QuoteView, "quote_form.html", conn: @conn, changeset: @changeset  %>
     </div>
-    <div class='col-6'> </div>
+    <div class='col'> </div>
   </div>
+  <br/>
   <div id='product-app'>
     <div class='row'>
-      <div class='col'></div>
-      <div class='col-6'>
-        <input type='text' v-model='search' class='form-control' placeholder='search products'>
-      </div>
-      <div class='col-4'>
-        <div class="btn-group justify-content-end " role="group" aria-label="Basic example">
-          <button type="button" class="btn btn-secondary" v-for="paginationButton in paginate_by">{{paginationButton.value}}</button>
-        </div>
+      <div class='col'>
+        <form @submit.prevent="onSubmit" class='form-inline'>
+          <input class='form-control' placeholder='Search for products' v-model="search_term">
+          <button type="submit" class='btn btn-info'>Search</button>
+        </form>
       </div>
     </div>
     <br/>
@@ -32,7 +30,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="product in filteredProducts">
+            <tr v-for="product in displayProducts">
               <td>{{product.nsn}}</td>
               <td>{{ product.name }}</td>
               <td>{{ product.nsn_formatted }}</td>
@@ -40,11 +38,22 @@
             </tr>
           </tbody>
         </table>
-      </div>
-    </div>
-    <div class='row'>
-      <div class='col'>
-       <v-client-table :data="products" :columns="columns" :options="options"></v-client-table
+        <nav aria-label='Product pagination navigation'>
+          <ul class='pagination justify-content-center'>
+            <li class="page-item">
+              <button class='page-link' @click="first" v-bind:disabled="current_page == 1">First</button>
+            </li>
+            <li class="page-item">
+              <button class="page-link" @click="previous" v-bind:disabled="current_page == 1">Previous</button>
+            </li>
+            <li class="page-item" >
+              <button class="page-link" v-bind:disabled="current_page == total_pages" @click="next">Next</button>
+            </li>
+            <li class="page-item">
+              <button class='page-link' @click="last"  v-bind:disabled="current_page == total_pages">Last</button>
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
   </div>

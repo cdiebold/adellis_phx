@@ -5,7 +5,7 @@ defmodule Adellis.Catalog.Product do
   schema "products" do
     field(:name, :string)
     field(:item_name_code, :integer)
-    field(:nsn, :integer)
+    field(:nsn, :string)
     field(:nsn_formatted, :string)
     field(:type_of_item_identification_code, :string)
   end

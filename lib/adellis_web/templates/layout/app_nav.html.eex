@@ -8,7 +8,7 @@
   <div id="navbarNavDropdown" class="navbar-collapse collapse justify-content-between">
     <ul class="navbar-nav mx-auto">
       <li class='nav-item'>
-        <button class="btn btn-outline-primary" type="button">Quick Quote</button>
+        <button class="btn btn-outline-primary justify-content-center" type="button">Quick Quote</button>
       </li>
     </ul>
     <ul class="navbar-nav ml-auto order-0">

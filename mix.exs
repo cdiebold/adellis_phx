@@ -20,7 +20,14 @@ defmodule Adellis.Mixfile do
   def application do
     [
       mod: {Adellis.Application, []},
-      extra_applications: [:ex_debug_toolbar, :bamboo, :logger, :runtime_tools]
+      extra_applications: [
+        :scrivener_ecto,
+        :ex_debug_toolbar,
+        :bamboo,
+        :logger,
+        :runtime_tools
+        # :ex_machina
+      ]
     ]
   end
 
@@ -46,7 +53,10 @@ defmodule Adellis.Mixfile do
       {:ex_debug_toolbar, "~> 0.5.0"},
       {:bamboo, "~> 0.8"},
       {:scrivener_ecto, "~> 1.3"},
-      {:scrivener_html, "~> 1.7"}
+      {:scrivener_html, "~> 1.7"},
+      {:scrivener_headers, "~> 3.1"},
+      {:ex_machina, "~> 2.2"},
+      {:ex_link_header, "~> 0.0.5"}
     ]
   end
 
