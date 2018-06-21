@@ -7,39 +7,35 @@ defmodule AdellisWeb.Acceptance.HomepageTest do
   test "can navigate to product page using navbar" do
     navigate_to("/")
 
-    navbar = find_element(:tag, "nav")
-
-    find_within_element(navbar, :link_text, "PRODUCTS")
+    find_element(:tag, "nav")
+    |> find_within_element(:link_text, "Products")
     |> click()
-
-    assert current_url() =~ "/products"
+    assert current_path() == "/products"
   end
 
   test "can navigate to product page from click on browse product button" do
     navigate_to("/")
     find_element(:class, "custom-btn") |> click()
-    assert current_url() =~ "/products"
+    assert current_path() == "/products"
   end
 
   test "can navigate to the about page using navbar" do
     navigate_to("/")
 
-    navbar = find_element(:tag, "nav")
-
-    find_within_element(navbar, :link_text, "ABOUT")
+    find_element(:tag, "nav")
+    |> find_within_element(:link_text, "About")
     |> click()
 
-    assert current_url() =~ "/about"
+    assert current_path() == "/about"
   end
 
   test "can navigate to the contact page using navbar" do
     navigate_to("/")
 
-    navbar = find_element(:tag, "nav")
-
-    find_within_element(navbar, :link_text, "CONTACT")
+    find_element(:tag, "nav")
+    |> find_within_element(:link_text, "Contact")
     |> click()
 
-    assert current_url() =~ "/contact"
+    assert current_path() == "/contact"
   end
 end

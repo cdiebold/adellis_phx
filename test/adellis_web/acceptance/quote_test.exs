@@ -25,16 +25,16 @@ defmodule AdellisWeb.Acceptance.QuoteTest do
     |> fill_field("Ideal Logistics LLC")
 
     # click on submit button
-    find_within_element(form, :class, "uk-button")
+    find_within_element(form, :class, "btn")
     |> click()
 
     assert current_path() == "/"
 
     message =
-      find_element(:class, "uk-alert-primary")
+      find_element(:class, "alert-success")
       |> visible_text()
 
-    assert message == "Quote submitted successfully"
+    assert message =~ "Quote submitted successfully"
   end
 
   test "quote form shows error messages with invalid data" do
@@ -42,15 +42,15 @@ defmodule AdellisWeb.Acceptance.QuoteTest do
 
     form = find_element(:id, "quote-form")
     # submit an empty form
-    find_within_element(form, :class, "uk-button")
+    find_within_element(form, :class, "btn")
     |> click()
 
     # assert current_path() == "/products"
 
     message =
-      find_element(:class, "uk-alert-danger")
+      find_element(:class, "alert-danger")
       |> visible_text()
 
-    assert message == "Please check the form for errors"
+    assert message =~ "Please check the form for errors"
   end
 end
