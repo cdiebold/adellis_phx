@@ -4,7 +4,7 @@ defmodule Adellis.Catalog.ProductTest do
   alias Adellis.Catalog.Product
 
   @valid_attrs %{
-    nsn: 1_234_001_111_111,
+    nsn: "1_234_001_111_111",
     nsn_formatted: "1234-00-1111111",
     name: "sleeve, spacer",
     item_name_code: 123_456,
