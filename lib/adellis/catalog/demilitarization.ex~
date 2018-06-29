@@ -1,0 +1,19 @@
+defmodule Adellis.Catalog.Demilitarization do
+  use Ecto.Schema
+  import Ecto.Changeset
+
+
+  schema "demilitarizations" do
+    field :code, :string
+    field :description, :string
+
+    timestamps()
+  end
+
+  @doc false
+  def changeset(demilitarization, attrs) do
+    demilitarization
+    |> cast(attrs, [:code, :description])
+    |> validate_required([:code, :description])
+  end
+end
