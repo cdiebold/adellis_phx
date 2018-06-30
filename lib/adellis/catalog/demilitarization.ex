@@ -2,9 +2,8 @@ defmodule Adellis.Catalog.Demilitarization do
   use Ecto.Schema
   import Ecto.Changeset
 
-
+  @primary_key {:code, :string, autogenerate: false}
   schema "demilitarizations" do
-    field :code, :string
     field :description, :string
   end
 

@@ -26,7 +26,7 @@ defmodule Adellis.Catalog.ProductTest do
     attrs = %{@valid_attrs | type_of_item_identification_code: "aaaaa"}
     changeset = Product.changeset(%Product{}, attrs)
 
-    assert %{type_of_item_identification_code: ["should be at most 3 character(s) long"]} =
+    assert %{type_of_item_identification_code: ["should be at most 3 character(s)"]} =
              errors_on(changeset)
   end
 

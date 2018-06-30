@@ -1,0 +1,13 @@
+defmodule Adellis.Repo.Migrations.CreateFederalSupplyClassifications do
+  use Ecto.Migration
+
+  def change do
+    create table(:federal_supply_classifications) do
+      add :id, :integer
+      add :name, :string
+
+      timestamps()
+    end
+
+  end
+end

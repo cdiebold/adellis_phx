@@ -1,6 +1,0 @@
-class Demilitarization:
-    def __init__(self):
-        code = ""
-        description = ""
-
-    

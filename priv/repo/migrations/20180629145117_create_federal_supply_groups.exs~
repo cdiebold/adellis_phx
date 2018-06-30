@@ -1,0 +1,12 @@
+defmodule Adellis.Repo.Migrations.CreateFederalSupplyGroups do
+  use Ecto.Migration
+
+  def change do
+    create table(:federal_supply_groups) do
+      add :id, :integer
+      add :name, :string
+
+    end
+
+  end
+end
