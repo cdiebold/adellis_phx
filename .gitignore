@@ -29,3 +29,6 @@ npm-debug.log
 /assets/vendor/
 
 .~lock.*
+.class
+.ex~
+.exs~

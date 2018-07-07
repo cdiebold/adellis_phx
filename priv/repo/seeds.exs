@@ -628,3 +628,6 @@ shelf_lives = [
 
 
 Enum.map(shelf_lives, fn shelf_life -> Repo.insert!(shelf_life) end)
+
+
+
