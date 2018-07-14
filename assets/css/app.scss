@@ -1,8 +1,8 @@
 /* This file is for your main application css. */
-// @import "variables-theme";
+@import "variables-theme";
 // @import "mixins-theme";
 // @import "uikit-theme";
-
+@import "components/navbar";
 @import "bootstrap";
 @import "abstracts/variables";
 @import "abstracts/mixins";

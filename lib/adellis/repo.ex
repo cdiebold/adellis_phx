@@ -1,6 +1,6 @@
 defmodule Adellis.Repo do
   use Ecto.Repo, otp_app: :adellis
-  use Scrivener, page_size: 2
+  use Scrivener, page_size: 10
 
   @doc """
   Dynamically loads the repository url from the
