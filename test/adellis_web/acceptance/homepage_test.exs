@@ -10,6 +10,7 @@ defmodule AdellisWeb.Acceptance.HomepageTest do
     find_element(:tag, "nav")
     |> find_within_element(:link_text, "Products")
     |> click()
+
     assert current_path() == "/products"
   end
 

@@ -8,15 +8,12 @@ defmodule Adellis.Catalog do
   end
 
   def paginate(params) do
-    page =
-      Product
-      |> Repo.paginate(params)
+    Product
+    |> Repo.paginate(params)
   end
 
   def search_products(params) do
-    IO.inspect(params)
     search_term = get_in(params, ["query"])
-    IO.puts(search_term)
 
     Product
     |> search(search_term)
