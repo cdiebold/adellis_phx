@@ -56,6 +56,7 @@ defmodule Adellis.Mixfile do
       {:scrivener_html, "~> 1.7"},
       {:scrivener_headers, "~> 3.1"},
       {:ex_machina, "~> 2.2"},
+      {:money, "~> 1.2"},
       {:ex_link_header, "~> 0.0.5"}
     ]
   end

@@ -4,8 +4,8 @@ defmodule Adellis.Catalog.FederalSupplyClassification do
 
   @primary_key {:id, :integer, autogenerate: false}
   schema "federal_supply_classifications" do
-    #field :id, :integer
-    field :name, :string
+    # field :id, :integer
+    field(:name, :string)
   end
 
   @doc false

@@ -2,11 +2,9 @@ defmodule Adellis.Sales.Priority do
   use Ecto.Schema
   import Ecto.Changeset
 
-
   schema "priorities" do
-    field :code, :string
-    field :description, :string
-
+    field(:code, :string)
+    field(:description, :string)
   end
 
   @doc false

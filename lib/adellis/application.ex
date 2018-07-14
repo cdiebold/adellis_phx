@@ -11,7 +11,7 @@ defmodule Adellis.Application do
       # Start the Ecto repository
       supervisor(Adellis.Repo, []),
       # Start the endpoint when the application starts
-      supervisor(AdellisWeb.Endpoint, []),
+      supervisor(AdellisWeb.Endpoint, [])
       # Start your own worker by calling: Adellis.Worker.start_link(arg1, arg2, arg3)
       # worker(Adellis.Worker, [arg1, arg2, arg3]),
     ]

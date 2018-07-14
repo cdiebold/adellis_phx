@@ -2,11 +2,9 @@ defmodule Adellis.Catalog.ShelfLife do
   use Ecto.Schema
   import Ecto.Changeset
 
-
   schema "shelf_lives" do
-    field :code, :string
-    field :life, :integer
-
+    field(:code, :string)
+    field(:life, :integer)
   end
 
   @doc false

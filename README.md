@@ -31,3 +31,4 @@ Website for Python in EXCEL
 
 https://www.datacamp.com/community/tutorials/python-excel-tutorial
 
+https://hexdocs.pm/money/Money.Ecto.Type.html#content

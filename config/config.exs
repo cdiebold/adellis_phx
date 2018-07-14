@@ -10,6 +10,22 @@ config :adellis, ecto_repos: [Adellis.Repo]
 
 config :adellis, Adellis.Mailer, adapter: Bamboo.TestAdapter
 
+config :money,
+  # this allows you to do Money.new(100)
+  default_currency: :USD,
+  # change the default thousands separator for Money.to_string
+  separator: ".",
+  # change the default decimal delimeter for Money.to_string
+  delimiter: ",",
+  # don’t display the currency symbol in Money.to_string
+  symbol: false,
+  # position the symbol
+  symbol_on_right: false,
+  # add a space between symbol and number
+  symbol_space: false,
+  # don’t display the remainder or the delimeter
+  fractional_unit: false
+
 # Configures the endpoint
 config :adellis, AdellisWeb.Endpoint,
   url: [host: "localhost"],

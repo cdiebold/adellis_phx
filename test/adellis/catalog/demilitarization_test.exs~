@@ -1,6 +1,0 @@
-defmodule Adellis.Catalog.DemilitarizationTest do
-  use Adellis.DataCase
-
-  alias Adellis.Catalog.Demilitarization
-
-  end

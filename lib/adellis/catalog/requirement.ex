@@ -2,13 +2,11 @@ defmodule Adellis.Catalog.Requirement do
   use Ecto.Schema
   import Ecto.Changeset
 
-
   schema "requirements" do
-    field :nsn, :string
-    field :reply_one, :string
-    field :reply_two, :string
-    field :requirement, :string
-
+    field(:nsn, :string)
+    field(:reply_one, :string)
+    field(:reply_two, :string)
+    field(:requirement, :string)
   end
 
   @doc false

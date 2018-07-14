@@ -4,7 +4,7 @@ defmodule Adellis.Catalog.Demilitarization do
 
   @primary_key {:code, :string, autogenerate: false}
   schema "demilitarizations" do
-    field :description, :string
+    field(:description, :string)
   end
 
   @doc false

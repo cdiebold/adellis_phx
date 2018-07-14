@@ -2,11 +2,10 @@ defmodule Adellis.Catalog.FederalSupplyGroup do
   use Ecto.Schema
   import Ecto.Changeset
 
-
   @primary_key {:id, :integer, autogenerate: false}
   schema "federal_supply_groups" do
-    #field :id, :integer
-    field :name, :string
+    # field :id, :integer
+    field(:name, :string)
   end
 
   @doc false
